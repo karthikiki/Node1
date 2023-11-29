@@ -22,6 +22,7 @@ const home = `
 
 //middleware
 app.use(express.json());
+app.use(cors());
 //Home 
 app.get('/', (req, res) => res.send(home))
 //students routers
