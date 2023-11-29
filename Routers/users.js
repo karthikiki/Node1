@@ -40,7 +40,7 @@ router.post("/login", async(req,res)=>{
             token : token
         }})
     } catch (error) {
-        res.status(500).json({data:"Internal server Error"});
+        res.status(500).json({data:"Internal server Error", error: error });
     }
 })
 export const userRouter = router;
