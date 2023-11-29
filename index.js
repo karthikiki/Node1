@@ -4,6 +4,7 @@ import dotenv from "dotenv"
 import { studentsRouter } from "./Routers/students.js";
 import { userRouter } from "./Routers/users.js";
 import { isAuthenticated } from "./Authentication/auth.js";
+import cors from "cors"
 
 // const client= await dbConnect();
 
