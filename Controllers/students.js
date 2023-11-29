@@ -1,12 +1,11 @@
 import { ObjectId, client } from "../db.js";
 
-
 export function getAllStudents(req){
     return client
     .db("guvi")
     .collection("students")
     .find(req.query)
-    .toArray();
+    .toArray();
 }
 export function getStudentsById(id){
     return client

@@ -3,6 +3,7 @@ import express from "express"
 import dotenv from "dotenv"
 import { studentsRouter } from "./Routers/students.js";
 import { userRouter } from "./Routers/users.js";
+import { isAuthenticated } from "./Authentication/auth.js";
 
 // const client= await dbConnect();
 
@@ -24,7 +25,7 @@ app.use(express.json());
 //Home 
 app.get('/', (req, res) => res.send(home))
 //students routers
-app.use("/students",studentsRouter) 
+app.use("/students",isAuthenticated,studentsRouter) 
 //users Router
 app.use("/users", userRouter)
 

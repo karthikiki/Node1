@@ -1,10 +1,12 @@
 import express from "express";
 import { addStudents, deleteStudentsData, getAllStudents, getStudentsById, updateStudentData } from "../Controllers/students.js";
+import jwt from "jsonwebtoken"
 
 const router = express.Router();
 
 router.get("/all",async (req,res)=>{ 
     try {
+    
         if(req.query.experience){
             req.query.experience = +req.query.experience;
         }
@@ -12,7 +14,7 @@ router.get("/all",async (req,res)=>{
             req.query.taskCompletion = +req.query.taskCompletion;
         }
         const students = await getAllStudents(req)
-        console.log(students)
+        // console.log(students)
         if(students.length <= 0){
             res.status(400).json({data:"user not found"})
             return
