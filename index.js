@@ -6,6 +6,7 @@ import { userRouter } from "./Routers/users.js";
 import { isAuthenticated } from "./Authentication/auth.js";
 import cors from "cors"
 
+
 // const client= await dbConnect();
 
 dotenv.config();
@@ -22,8 +23,9 @@ const home = `
     `    
 
 //middleware
-app.use(express.json());
 app.use(cors());
+app.use(express.json());
+
 //Home 
 app.get('/', (req, res) => res.send(home))
 //students routers
